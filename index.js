@@ -14,6 +14,9 @@ mongoose.connect(process.env.MONGO_URI)
 app.use(express.json())
 app.use(cors())
 app.use("/book",route)
+app.use("/",(req,res)=>{
+    res.send("welcome to Book Store")
+})
 // app.use("*",(req,res)=>res.status(200).json({message:"Hello Every One"}))
 
 port=process.env.Prot || 4000
